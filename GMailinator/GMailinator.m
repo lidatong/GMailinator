@@ -223,6 +223,16 @@ NSBundle *GetGMailinatorBundle(void)
             newEvent = [NSEvent eventWithCGEvent: cgEvent];
             break;
         }
+        case 'h': { // left
+            cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_LeftArrow, true);
+            newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            break;
+        }
+        case 'l': { // right
+            cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_RightArrow, true);
+            newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            break;
+        }
     }
 
     if (cgEvent != NULL) {
