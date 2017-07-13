@@ -211,12 +211,6 @@ NSBundle *GetGMailinatorBundle(void)
             newEvent = [NSEvent eventWithCGEvent: cgEvent];
             break;
         }
-        case 'v': { // view raw message
-            cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_U, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskAlternate);
-            newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            break;
-        }
         case 'z': { // undo
             cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_Z, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
@@ -230,6 +224,12 @@ NSBundle *GetGMailinatorBundle(void)
         }
         case 'l': { // right
             cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_RightArrow, true);
+            newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            break;
+        }
+        case 'v': { // expand selection to next message (down)
+            cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_Backslash, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskShift | kCGEventFlagMaskCommand | kCGEventFlagMaskControl);
             newEvent = [NSEvent eventWithCGEvent: cgEvent];
             break;
         }
