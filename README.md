@@ -42,6 +42,13 @@ in progress.  Tested with Mail for OS X Sierra.
        `defaults write com.apple.mail EnableBundles -bool true`
 4. Relaunch Mail.
 
+## How to install (Mojave onwards)
+1. Build the project
+2. In the Finder, open /tmp/Gmailinator and ~/Library/Mail/Bundles
+3. Copy the GMailinator.mailbundle folder from /tmp/Gmailinator to ~/Library/Mail/Bundles
+4. In mail, open Preferences -> General -> Manage Plug-ins, and enable Gmailinator.
+5. You will be prompted to restart Mail
+
 ## Credits
 
 A lot of this was built with heavy use of of the
